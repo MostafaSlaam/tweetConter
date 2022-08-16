@@ -33,4 +33,23 @@ internal class MainViewModelTest {
         assertEquals(viewModel.tweet.value, "")
 
     }
+
+    @Test
+    fun testPostTweetFunction() {
+        val viewModel = MainViewModel()
+
+        //test init values
+        assertEquals(viewModel.counter.value, 0)
+        assertEquals(viewModel.remaing.value, 280)
+        assertEquals(viewModel.tweet.value, "")
+        assertEquals(viewModel.postTweetState.value, false)
+
+        viewModel.tweet.value = "hello world"
+        viewModel.counter.value = viewModel.tweet.value!!.length
+        viewModel.remaing.value = 290 - viewModel.counter.value!!
+        viewModel.postTweet()
+
+        assertEquals(viewModel.postTweetState.value, true)
+
+    }
 }

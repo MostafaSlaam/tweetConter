@@ -10,7 +10,7 @@ class MainViewModel : ViewModel() {
 
 
     var counter = MutableLiveData(0)
-    var remaing=MutableLiveData(280)
+    var remaing = MutableLiveData(280)
     var tweet: MutableLiveData<String> = MutableLiveData("")
     val searchKeywordValidationListener = object : TextWatcher {
 
@@ -23,16 +23,23 @@ class MainViewModel : ViewModel() {
         }
 
         override fun afterTextChanged(p0: Editable?) {
-            remaing.value=remaing.value!!-(p0!!.length-counter.value!!)
-            counter.value=p0?.length
+            remaing.value = remaing.value!! - (p0!!.length - counter.value!!)
+            counter.value = p0?.length
 
         }
     }
 
 
-    fun clearText(){
-        tweet.value=""
-        counter.value=0
-        remaing.value=280
+    var postTweetState = MutableLiveData(false)
+
+
+    fun clearText() {
+        tweet.value = ""
+        counter.value = 0
+        remaing.value = 280
+    }
+
+    fun postTweet() {
+        postTweetState.value = tweet.value!!.isNotEmpty()
     }
 }
