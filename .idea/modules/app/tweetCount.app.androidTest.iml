@@ -14,6 +14,7 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_app_classes_jar/debug/classes.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/efcbf7a9e15423f012c0cde2b06ccf5f/transformed/junit-1.1.3-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/e72e8ac086ae581b2919f71a4bb58320/transformed/espresso-core-3.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/67795ceebe5d1850ead63d4604673aad/transformed/databinding-runtime-7.2.2-api.jar</arg>
